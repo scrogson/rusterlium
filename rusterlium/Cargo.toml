@@ -1,0 +1,7 @@
+[package]
+name = "rusterlium"
+version = "0.1.0"
+authors = ["Sonny Scroggin <sonny@scrogg.in>"]
+
+[dependencies]
+rusterlium_codegen = { path = "../rusterlium_codegen" }

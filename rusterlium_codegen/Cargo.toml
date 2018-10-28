@@ -1,0 +1,13 @@
+[package]
+authors = ["Sonny Scroggin <sonny@scrogg.in>"]
+description = "Attributes to simplify the use of the rusterlium crate"
+license = "Apache 2.0"
+name = "rusterlium_codegen"
+version = "0.1.0"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "0.6.8"
+syn = { version = "0.15.15", features = ["full", "extra-traits"] }

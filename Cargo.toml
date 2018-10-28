@@ -1,0 +1,2 @@
+[workspace]
+members = ["rusterlium", "rusterlium_codegen"]
