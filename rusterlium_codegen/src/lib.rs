@@ -100,12 +100,16 @@ fn extract_inputs<'a>(inputs: &'a Punctuated<syn::FnArg, Comma>) -> proc_macro2:
         };
 
         let error = format!(
-            "unsupported function argument type for {:?}",
-            stringify!(name)
+            "unsupported function argument type `{}` for `{}`",
+            quote!(#typ),
+            quote!(#name)
         );
 
         let arg = quote! {
-            let #name: #typ = args[#i].decode(env).expect(#error);
+            let #name: #typ = args[#i]
+                .decode()
+                .map_err(|_| #error)
+                .expect(#error);
         };
 
         tokens.extend(arg);
