@@ -45,7 +45,7 @@ fn impl_wrapper(_args: &syn::AttributeArgs, item: &syn::Item) -> proc_macro2::To
     // wrap the original function in a wrapper function
     let wrapped = quote! {
         #[no_mangle]
-        pub extern "C" fn #wrapper(env: rustler::Env<'a>, args: &[rustler::Term<'a>]) -> rustler::Term<'a> {
+        pub extern "C" fn #wrapper<'a>(env: rustler::Env<'a>, args: &[rustler::Term<'a>]) -> rustler::Term<'a> {
             use std::panic;
             use rustler::{Decoder, Encoder};
 
