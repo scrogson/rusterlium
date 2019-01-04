@@ -1,4 +1,6 @@
 pub use rusterlium_codegen::rusterlium;
+pub use rustler::Env;
+pub use rustler::Term;
 
 #[cfg(test)]
 mod test {
