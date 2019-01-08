@@ -124,8 +124,12 @@ fn create_function_params<'a>(
     let mut tokens = proc_macro2::TokenStream::new();
 
     for item in inputs.iter() {
-        let name = if let syn::FnArg::Captured(ref captured) = *item {
-            &captured.pat
+        let name = if let syn::FnArg::Captured(syn::ArgCaptured {
+            pat: syn::Pat::Ident(syn::PatIdent { ref ident, .. }),
+            ..
+        }) = *item
+        {
+            ident
         } else {
             panic!("unsupported input given: {:?}", stringify!(&item));
         };
