@@ -114,6 +114,7 @@ dependencies = [
  "erlang_nif-sys 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure_derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rusterlium_codegen 0.1.0",
  "rustler 0.18.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustler_codegen 0.18.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -123,6 +124,7 @@ dependencies = [
 name = "rusterlium_codegen"
 version = "0.1.0"
 dependencies = [
+ "erlang_nif-sys 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure_derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro2 0.4.24 (registry+https://github.com/rust-lang/crates.io-index)",

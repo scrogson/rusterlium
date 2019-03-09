@@ -20,9 +20,12 @@ It would be nice to provide a way to define a Rust function that would only be
 concerned with Rust types:
 
 ```rust
-fn add(_env: Env, a: i64, b: i64) -> i64 {
+#[rusterlium]
+fn add(a: i64, b: i64) -> i64 {
   a + b
 }
+
+rusterlium_init!(Math, [add]);
 ```
 
 The arguments (`a` and `b` in this case) would automatically be decoded from
